@@ -1,6 +1,8 @@
 Steps To Launch This Web App:
 
-Just type : "python app.py" (without quotes) from terminal
+1. Type this in terminal:     .\\env\Scripts\activate.ps1
+
+2. Then :    python app.py
 
 Made by: Bhagesh Bhutani
 
