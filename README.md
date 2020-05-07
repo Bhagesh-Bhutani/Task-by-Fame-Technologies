@@ -1,3 +1,5 @@
+PLEASE KINDLY CLEAR YOUR BROWSER CACHE BEFORE LAUNCHING MY APP
+
 Steps To Launch This Web App:
 
 1. Type this in terminal:     .\\env\Scripts\activate.ps1
