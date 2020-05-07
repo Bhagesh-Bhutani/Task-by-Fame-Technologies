@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="{{ url_for('static',filename='js/image_render.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"
+</head>
+<body>
+    {% block body %}{% endblock %}
+    <div class="alert alert-success" role="alert" align="center">
+        <h4 class="alert-heading"></h4>
+        <p>Great! You have Successfully Signed in! Now if you wish, you can edit your profile!</p>
+    </div>
+    <br><br>
+    <a href="/index.html"><button type="button" class="btn btn-danger">Sign Out</button></a>
+    <br><br>
+    <h1 align="center">Your Details</h1>
+    <div id='info_section'>
+        {% for key in keys %}
+            <div class="alert alert-primary" role="alert">{{ key }} : {{ d[key] }}</div>
+        {% endfor %}
+    </div>
+    <br><br><br>
+    <h1 align="center">Edit(only fill those fields which you want to edit)</h1>
+    <form align="center" action='/welcome.html' method='POST' enctype="multipart/form-data">
+        <div class="form-row col-md-12">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">First Name</label>
+            <input type="text" name="firstname" class="form-control" id="inputEmail4" placeholder="Your First Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" name="lastname" class="form-control" id="" placeholder="Your Last Name">
+          </div>
+        </div>
+        <div class="form-group col-md-8 col-md-offset-2">
+          <label for="inputAddress">Email-ID</label>
+          <input type="text" name="email" class="form-control " id="" placeholder="Your Email ID">
+        </div>
+        <div class="form-row col-md-8 col-md-offset-2">
+          <div class="form-group col-md-6 col-md-offset-3">
+            <label for="inputCity">Contact Phone No.</label>
+            <input type="text" name="phoneno" class="form-control" id="inputCity" placeholder="Your Phone No.">
+          </div>
+          <div class="form-group col-md-6 col-md-offset-3">
+            <label for="mypass">Password</label>
+            <input type="password" name="pw" class="form-control" id="mypass" placeholder="Your Password">
+          </div>
+        </div>
+        <div class="row py-4">
+          <div class="col-lg-6 mx-auto">
+  
+              <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                  <input id="upload" name="image" type="file" onchange="readURL(this);" class="form-control border-0">
+                  <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                  <div class="input-group-append">
+                      <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                  </div>
+              </div>
+  
+              
+              
+              <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+  
+          </div>
+      </div>
+  </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Make Changes</button>
+        </div>
+      </form>
+</body>
+</html>

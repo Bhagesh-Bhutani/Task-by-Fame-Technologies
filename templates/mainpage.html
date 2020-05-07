@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script src="{{ url_for('static' , filename='js/image_render.js') }}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Where do you want to go?</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="mainpage.html">Sign up!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4" align="center">Sign Up!</h1>
+        </div>
+      </div>
+    
+      <form align="center" action='/mainpage.html' method='POST' enctype="multipart/form-data">
+        <div class="form-row col-md-12">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">First Name</label>
+            <input type="text" name="firstname" class="form-control" id="inputEmail4" placeholder="Your First Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" name="lastname" class="form-control" id="" placeholder="Your Last Name">
+          </div>
+        </div>
+        <div class="form-group col-md-8 col-md-offset-2">
+          <label for="inputAddress">Email-ID</label>
+          <input type="text" name="email" class="form-control " id="" placeholder="Your Email ID">
+        </div>
+        <div class="form-row col-md-8 col-md-offset-2">
+          <div class="form-group col-md-6 col-md-offset-3">
+            <label for="inputCity">Contact Phone No.</label>
+            <input type="text" name="phoneno" class="form-control" id="inputCity" placeholder="Your Phone No.">
+          </div>
+          <div class="form-group col-md-6 col-md-offset-3">
+            <label for="mypass">Password</label>
+            <input type="password" name="pw" class="form-control" id="mypass" placeholder="Your Password">
+          </div>
+        </div>
+        <div class="row py-4">
+          <div class="col-lg-6 mx-auto">
+  
+              <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                  <input id="upload" name="image" type="file" onchange="readURL(this);" class="form-control border-0">
+                  <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                  <div class="input-group-append">
+                      <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                  </div>
+              </div>
+  
+              
+              
+              <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+  
+          </div>
+      </div>
+  </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Sign Up!</button>
+        </div>
+      </form>
+</body>
+</html>
